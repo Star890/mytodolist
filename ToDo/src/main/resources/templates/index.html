@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Create a Task</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- Latest compiled and minified CSS -->
+	    <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/custom.css">
+    
+</head>
+ <nav class="navbar navbar-dark bg-dark">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+<body>
+
+    <div class="container">
+    
+    <!-- <p th:text="${title}" />
+	<p th:text="${author}" />
+	<p th:text="${description}" />
+	<p th:text="${status}" /> -->
+	<div align="center">
+        <h2>Create a Task</h2>		
+        <!--  the object is the MODEL object of what is being passed through -->
+          <form th:action="@{/post}" th:object="${user}" method="post">
+           <table>
+			<tr>
+		        <td>Title</td>
+			     <td><input type="text" th:field="*{title}" /></td>
+			</tr>
+			<tr>
+			    <td>Author:</td>
+			    <td><input type="text" th:field="*{author}" /></td>
+			</tr>
+			<tr>
+			<td>Description:</td>
+			    <td><input type="text" th:field="*{description}" /></td>
+			<tr>
+			<td>Status:</td>
+			    <td><input type="text" th:field="*{status}" /></td>
+			</tr>
+			
+		   </table>
+		   			    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit Your Posts</button>
+		   
+		   </div>
+        </form>  
+        
+       
+        
+        
+        
+        
+    </div>
+    <script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+</body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Your Lists</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="/custom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- takes in the attributes and displays on this page -->
+<h1> Your New Task</h1>
+<h4>Blog Post:</h4>
+<p th:text="${title}" />
+  <p th:text="${author}" />
+	<p th:text="${description}" />
+	<p th:text="${status}" />
+	 	<a th:href="@{/}"><button class="btn btn-success">Back To Home Page</button></a>
+	    <a th:href="@{'edit/{id}' (id=${id})}"> <button type="submit" class="btn btn-info" th:text="update">Edit</button></a>
+<!--action URL HAS to match up with controller URL and method   -->
+<form action="#" th:action="@{'/posts/{id}'(id=${id})}" th:method="delete" class="form-horizontal">             
+        <div class="form-group">
+            <input type="hidden" name="_method" value="delete"/>
+        <button type="submit" class="btn btn-danger" th:text="Delete">Delete</button>
+        
+        
+    </div>
+</form> 
+</body>
+</html>
